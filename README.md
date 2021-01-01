@@ -14,4 +14,4 @@ If the discriminant < 0, there are 2 imaginary roots
 
 If the discriminant = 0, there is only 1 real root
 
-Finally, this program will also graph the quadratic equation
+If I were to add another feature to this program, it would be to graph the quadratic equation. I will do so later, at the time I want to create this project just to refamiliarize myself with Webdeveloping languages.
