@@ -54,7 +54,7 @@ function solving(A,B,C){
         document.getElementById("root2").innerHTML = "("+root2x+" i,"+root2y+")";
     }
 
-    // Drawing curve
+    // Drawing curve (Work on this)
     let g = document.getElementById("graph");
     let graph = g.getContext("2d");
     graph.beginPath();
@@ -65,7 +65,7 @@ function solving(A,B,C){
     
 }
 
-// Graphing
+// Creating canvas
 let g = document.getElementById("graph");
 let graph = g.getContext("2d");
 
