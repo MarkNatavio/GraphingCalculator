@@ -8,9 +8,9 @@
 </head>
 <body>
     <h1>Quadratic Calculator</h1>
-    a: <input type="number" name="A" id="A"><br>
-    b: <input type="number" name="B" id="B"><br>
-    c: <input type="number" name="C" id="C"><br>
+    a: <input type="number" name="A" id="A" placeholder="0"><br>
+    b: <input type="number" name="B" id="B" placeholder="0"><br>
+    c: <input type="number" name="C" id="C" placeholder="0"><br>
     
     <button onclick="solving(document.getElementById('A').value,document.getElementById('B').value,document.getElementById('C').value)">Start</button>
 
@@ -20,6 +20,8 @@
     <p id="rootType"></p>
     <p id="root1"></p>
     <p id="root2"></p>
+    
+    <canvas id="graph" width="1000" height="500" style="border: 1px solid black;"></canvas>
 
     <script src="gc.js"></script>
 </body>

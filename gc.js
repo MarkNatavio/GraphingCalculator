@@ -53,4 +53,27 @@ function solving(A,B,C){
         document.getElementById("root1").innerHTML = "("+root1x+" i,"+root1y+")";
         document.getElementById("root2").innerHTML = "("+root2x+" i,"+root2y+")";
     }
+
+    // Drawing curve
+    let g = document.getElementById("graph");
+    let graph = g.getContext("2d");
+    graph.beginPath();
+    graph.moveTo(aos+500,y+250);
+    graph.quadraticCurveTo(aos+500, y+250, 0, 2000);
+    graph.stroke();
+        
+    
 }
+
+// Graphing
+let g = document.getElementById("graph");
+let graph = g.getContext("2d");
+
+// Setting axises
+graph.moveTo(0,250);
+graph.lineTo(1000,250);
+graph.stroke();
+
+graph.moveTo(500,0);
+graph.lineTo(500,500);
+graph.stroke();
