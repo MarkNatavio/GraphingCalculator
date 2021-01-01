@@ -1,15 +1,14 @@
 
 function gettingY(x){
-    let yval = a*Math.pow(x,2) + b*x + c;
-    return yval;
+    return a*Math.pow(x,2) + b*x + c;
 }
 
 // Setting values
-let a = 0, b = 0, c = 0;
+let a = 6, b = 2, c = 1;
 
 // Gettin discriminant
 let discriminant = 0;
-discriminant = Math.pow(a,2) - 4*a*c;
+discriminant = Math.pow(b,2) - 4*a*c;
 console.log("The discriminant is: " + discriminant);
 
 // Getting axis of symmetry
@@ -43,5 +42,15 @@ if (discriminant > 0){ // 2 real roots
     console.log("The only root is: ("+aos+","+y+")");
 
 } else{ // imaginary roots (discriminant < 0)
-    console.log("The roots are imaginary");
+    console.log("The roots are imaginary but the roots would be");
+    discriminant *= -1;
+
+    root1x = (-b + Math.sqrt(discriminant))/(2*a);
+    root1y = gettingY(root1x);
+
+    root2x = (-b - Math.sqrt(discriminant))/(2*a);
+    root2y = gettingY(root2x);
+
+    console.log("The first imaginary root is: ("+root1x+" i,"+root1y+")");
+    console.log("The second imaginary root is: ("+root2x+" i,"+root2y+")");
 }
