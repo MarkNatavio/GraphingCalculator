@@ -3,9 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Quadratic Calculator</title>
+    <link rel="stylesheet" href="looks.css">
 </head>
 <body>
+    <h1>Quadratic Calculator</h1>
+    a: <input type="number" name="A" id="A"><br>
+    b: <input type="number" name="B" id="B"><br>
+    c: <input type="number" name="C" id="C"><br>
+    
+    <button onclick="solving(document.getElementById('A').value,document.getElementById('B').value,document.getElementById('C').value)">Start</button>
+
+    <p id="discriminant"></p>
+    <p id="aos"></p>
+    <p id="vertex"></p>
+    <p id="rootType"></p>
+    <p id="root1"></p>
+    <p id="root2"></p>
+
     <script src="gc.js"></script>
 </body>
 </html>

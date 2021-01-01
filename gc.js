@@ -1,56 +1,56 @@
+function solving(A,B,C){
+    // Setting values
+    let a = A, b = B, c = C;
 
-function gettingY(x){
-    return a*Math.pow(x,2) + b*x + c;
-}
+    // Gettin discriminant
+    let discriminant = 0;
+    discriminant = Math.pow(b,2) - 4*a*c;
+    document.getElementById("discriminant").innerHTML = "The discriminant is: " + discriminant;
 
-// Setting values
-let a = 6, b = 2, c = 1;
+    // Getting axis of symmetry
+    let aos = 0;
+    aos = -b/(2*a);
+    document.getElementById("aos").innerHTML = "The axis of symmetry is: " + aos;
 
-// Gettin discriminant
-let discriminant = 0;
-discriminant = Math.pow(b,2) - 4*a*c;
-console.log("The discriminant is: " + discriminant);
-
-// Getting axis of symmetry
-let aos = 0;
-aos = -b/(2*a);
-console.log("The axis of symmetry is: " + aos);
-
-// Getting vertex
-let y = 0;
-y = gettingY(aos);
-console.log("The vertex is: ("+aos+","+y+")");
+    // Getting vertex
+    let y = 0;
+    y = a*Math.pow(aos,2) + b*aos + c;
+    document.getElementById("vertex").innerHTML = "The vertex is: ("+aos+","+y+")";
 
 
-// Finding roots
-// We must do [-b ± sqrt(pow(b,2) - 4*a*c)]/2a
+    // Finding roots, we must do [-b ± sqrt(pow(b,2) - 4*a*c)]/2a
+    let root1x = 0, root1y = 0;
+    let root2x = 0, root2y = 0;
+    if (discriminant > 0){ // 2 real roots
+        // Get first root
+        root1x = (-b + Math.sqrt(discriminant))/(2*a);
+        root1y = a*Math.pow(root1x,2) + b*root1x + c;
 
-let root1x = 0, root1y = 0;
-let root2x = 0, root2y = 0;
-if (discriminant > 0){ // 2 real roots
-    console.log("There are 2 real roots");
-    root1x = (-b + Math.sqrt(discriminant))/(2*a);
-    root1y = gettingY(root1x);
+        // Get second root
+        root2x = (-b - Math.sqrt(discriminant))/(2*a);
+        root2y = a*Math.pow(root2x,2) + b*root2x + c;
 
-    root2x = (-b - Math.sqrt(discriminant))/(2*a);
-    root2y = gettingY(root2x);
+        // Display root type and roots
+        document.getElementById("rootType").innerHTML = "There are 2 real roots:";
+        document.getElementById("root1").innerHTML = "("+root1x+","+root1y+")";
+        document.getElementById("root2").innerHTML = "("+root2x+","+root2y+")";
 
-    console.log("The first root is: ("+root1x+","+root1y+")");
-    console.log("The second root is: ("+root2x+","+root2y+")");
+    } else if (discriminant == 0){ // 1 real root (aos)
+        // Display root
+        document.getElementById("rootType").innerHTML = "There is only one real root:";
+        document.getElementById("root1").innerHTML = "("+aos+","+y+")";
 
-} else if (discriminant == 0){ // 1 real root (aos)
-    console.log("The only root is: ("+aos+","+y+")");
+    } else{ // imaginary roots (discriminant < 0)
+        discriminant *= -1;
 
-} else{ // imaginary roots (discriminant < 0)
-    console.log("The roots are imaginary but the roots would be");
-    discriminant *= -1;
+        root1x = (-b + Math.sqrt(discriminant))/(2*a);
+        root1y = a*Math.pow(root1x,2) + b*root1x + c
 
-    root1x = (-b + Math.sqrt(discriminant))/(2*a);
-    root1y = gettingY(root1x);
+        root2x = (-b - Math.sqrt(discriminant))/(2*a);
+        root2y = a*Math.pow(root2x,2) + b*root2x + c
 
-    root2x = (-b - Math.sqrt(discriminant))/(2*a);
-    root2y = gettingY(root2x);
-
-    console.log("The first imaginary root is: ("+root1x+" i,"+root1y+")");
-    console.log("The second imaginary root is: ("+root2x+" i,"+root2y+")");
+        document.getElementById("rootType").innerHTML = "There are 2 imaginary roots:";
+        document.getElementById("root1").innerHTML = "("+root1x+" i,"+root1y+")";
+        document.getElementById("root2").innerHTML = "("+root2x+" i,"+root2y+")";
+    }
 }
